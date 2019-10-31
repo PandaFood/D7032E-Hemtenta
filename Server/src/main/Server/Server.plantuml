@@ -13,10 +13,7 @@ title __Server Class Diagram__\n
           - canPlayerAffordCard()
           - topUpShop()
       }
-    }
-  
 
-    namespace Server {
       class Server.Deck {
           ~ deck : List<Card>
           - availableDeck : Stack<Card>
@@ -28,10 +25,7 @@ title __Server Class Diagram__\n
           + setDeck()
           + shuffleInDiscardPile()
       }
-    }
-  
 
-    namespace Server {
       class Server.Dice {
           {static} + CLAWS : int
           {static} + ENERGY : int
@@ -48,11 +42,7 @@ title __Server Class Diagram__\n
           + rollDie()
           + toString()
       }
-    }
 
-  
-
-    namespace Server {
       class Server.DiceRollHandler {
           + DiceRollHandler()
           + checkDiceResults()
@@ -61,11 +51,7 @@ title __Server Class Diagram__\n
           ~ checkHeart()
           ~ checkStars()
       }
-    }
 
-  
-
-    namespace Server {
       class Server.Game {
           ~ response : int[]
           - ALLDICE : int[]
@@ -77,20 +63,12 @@ title __Server Class Diagram__\n
           - rollDice()
           - startGame()
       }
-    }
 
-  
-
-    namespace Server {
       class Server.GameConfigurator {
           + GameConfigurator()
           + loadDeckConfiguration()
       }
-    }
 
-  
-
-    namespace Server {
       class Server.GameState {
           + TOTALPLAYERSPOTS : int
           # dice : List<Dice>
@@ -103,20 +81,104 @@ title __Server Class Diagram__\n
           + rollDice()
           + setMonsterInTokyo()
       }
+
+      abstract class Server.Monster.Monster {
+                  + inFromClient : BufferedReader
+                  + outToClient : DataOutputStream
+                  # evolutions : Stack<Card>
+                  # name : String
+                  - cards : List<Card>
+                  - connection : Socket
+                  - currentHealth : int
+                  - energy : int
+                  - inTokyo : boolean
+                  - isAlive : boolean
+                  - maxHealth : int
+                  - victoryPoints : int
+                  + Monster()
+                  + addCard()
+                  + addEnergy()
+                  + addVictoryPoints()
+                  + assignPlayer()
+                  + drawEvolutionCard()
+                  + getCards()
+                  + getCurrentHealth()
+                  + getEffects()
+                  + getEnergy()
+                  + getMaxHealth()
+                  + getName()
+                  + getPlayerIntInput()
+                  + getPlayerStringInput()
+                  + getVictoryPoints()
+                  + healHealth()
+                  + isAlive()
+                  + isInTokyo()
+                  + reduceEnergy()
+                  + reduceHealth()
+                  + setInTokyo()
+              }
+
+              class Server.Playables.Card {
+                          - cl : ClassLoader
+                          - cost : int
+                          - description : String
+                          - discard : boolean
+                          - effects : List<Effect>
+                          - id : int
+                          - name : String
+                          + Card()
+                          + Card()
+                          + getCost()
+                          + getDescription()
+                          + getEffects()
+                          + getId()
+                          + getName()
+                          + isDiscard()
+                          + setCost()
+                          + setDescription()
+                          + setDiscard()
+                          + setEffects()
+                          + setId()
+                          + setName()
+                          + toString()
+              }
+
+
+              abstract class Server.Playables.Effect {
+                          + getArmor()
+                          + getLessCost()
+                          + getMoreDamage()
+                          + getMoreStars()
+                          + starsWhenAttacking()
+              }
+
     }
 
-  Server.CardShop o-- Server.GameState : gameState
-  Server.Dice .up.|> java.lang.Comparable
-  Server.DiceRollHandler o-- Server.Util.EffectCalculator : effectCalculator
-  Server.DiceRollHandler o-- Server.GameState : gameState
-  Server.Game o-- Server.CardShop : cardShop
-  Server.Game o-- Server.Util.ConnectionManager : connectionManager
-  Server.Game o-- Server.Deck : deck
-  Server.Game o-- Server.GameConfigurator : gameConfigurator
-  Server.Game o-- Server.GameState : gameState
-  Server.Game o-- Server.DiceRollHandler : rollHandler
-  Server.GameState o-- Server.Deck : cardDeck
-  Server.GameState o-- Server.Monster.Monster : monsterInTokyo
+    Server.CardShop o-- Server.GameState : gameState
+    Server.Dice .up.|> java.lang.Comparable
+    Server.DiceRollHandler o-- Server.Util.EffectCalculator : effectCalculator
+    Server.DiceRollHandler o-- Server.GameState : gameState
+    Server.Game o-- Server.CardShop : cardShop
+    Server.Game o-- Server.Util.ConnectionManager : connectionManager
+    Server.Game o-- Server.Deck : deck
+    Server.Game o-- Server.GameConfigurator : gameConfigurator
+    Server.Game o-- Server.GameState : gameState
+    Server.Game o-- Server.DiceRollHandler : rollHandler
+    Server.GameState o-- Server.Deck : cardDeck
+    Server.GameState o-- Server.Monster.Monster : monsterInTokyo
+    Server.Monster.Monster o-- Server.Monster.Util.Printer : print
+    Server.Monster.Monsters.Alienoid -up-|> Server.Monster.Monster
+    Server.Monster.Monsters.Gigazaur -up-|> Server.Monster.Monster
+    Server.Monster.Monsters.Kong -up-|> Server.Monster.Monster
+    Server.Playables.Effects.Store.Armor1 -up-|> Server.Playables.Effect
+    Server.Playables.Effects.Store.CardsCostLess1 -up-|> Server.Playables.Effect
+    Server.Playables.Effects.Store.MoreDamage1 -up-|> Server.Playables.Effect
+    Server.Playables.Effects.Store.Stars1 -up-|> Server.Playables.Effect
+    Server.Playables.Effects.Store.Stars2 -up-|> Server.Playables.Effect
+    Server.Playables.Effects.Store.Stars3 -up-|> Server.Playables.Effect
+    Server.Playables.Effects.Store.StarsWhenAttacking -up-|> Server.Playables.Effect
+
+
 
 
 right footer
