@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Client:test" external.linked.project.path="$MODULE_DIR$/../../../Client" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="kingoftokyo" external.system.module.type="sourceSet" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
+  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../../ServerModule" rootProjectPath="$MODULE_DIR$/../../../ServerModule" />
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output-test url="file://$MODULE_DIR$/../../../Client/build/classes/java/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../Client/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../Client/src/test" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="KingTokyo.Client.main" />
+  </component>
+  <component name="TestModuleProperties" production-module="KingTokyo.Client.main" />
+</module>

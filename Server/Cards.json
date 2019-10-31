@@ -1,0 +1,74 @@
+{
+  "deck": [
+    {
+      "id": 1,
+      "name": "Acid Attack",
+      "description": "Deal 1 extra damage each turn",
+      "cost": 6,
+      "discard": false,
+      "effects": [
+        "Store.MoreDamage1"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Alien Metabolism",
+      "description": "Buying cards costs you 1 less",
+      "cost": 3,
+      "discard": false,
+      "effects": [
+        "Store.CardsCostLess1"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Alpha Monster",
+      "description": "Gain 1 star when you attack",
+      "cost": 5,
+      "discard": false,
+      "effects": [
+        "Store.StarsWhenAttacking"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Apartment Building",
+      "description": "+3 stars",
+      "cost": 5,
+      "discard": true,
+      "effects": [
+        "Store.Stars3"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Armor Plating",
+      "description": "Ignore damage of 1",
+      "cost": 4,
+      "discard": false,
+      "effects": [
+        "Store.Armor1"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Commuter Train",
+      "description": "+2 stars",
+      "cost": 4,
+      "discard": true,
+      "effects": [
+        "Store.Stars2"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Corner Stone",
+      "description": "+1 star",
+      "cost": 3,
+      "discard": true,
+      "effects": [
+        "Store.Stars1"
+      ]
+    }
+  ]
+}

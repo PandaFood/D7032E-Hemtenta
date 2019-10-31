@@ -1,12 +1,13 @@
-repositories {
-    mavenCentral()
+jar {
+    baseName = 'TokyoServer'
 }
 
-apply plugin: "java"
+dependencies {
+    compile "com.fasterxml.jackson.core:jackson-databind:2.2.3"
+    compile "org.junit.jupiter:junit-jupiter:5.4.2"
+}
 
 sourceSets {
-    main.java.srcDir "src."
-    test.java.srcDir ""
+    main.java.srcDir "src/main"
+    test.java.srcDir "src/test"
 }
-
-

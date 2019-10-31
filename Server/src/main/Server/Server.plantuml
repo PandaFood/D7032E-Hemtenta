@@ -1,0 +1,126 @@
+@startuml
+
+title __Server Class Diagram__\n
+
+    namespace Server {
+      class Server.CardShop {
+          ~ sb : StringBuilder
+          ~ shop : List<Card>
+          - MAXCARDSINSHOP : int
+          + CardShop()
+          + buyCard()
+          + checkCards()
+          - canPlayerAffordCard()
+          - topUpShop()
+      }
+    }
+  
+
+    namespace Server {
+      class Server.Deck {
+          ~ deck : List<Card>
+          - availableDeck : Stack<Card>
+          - discardPile : Stack<Card>
+          + Deck()
+          + discardCard()
+          + getDeck()
+          + getTopCard()
+          + setDeck()
+          + shuffleInDiscardPile()
+      }
+    }
+  
+
+    namespace Server {
+      class Server.Dice {
+          {static} + CLAWS : int
+          {static} + ENERGY : int
+          {static} + HEART : int
+          {static} + POINT1 : int
+          {static} + POINT2 : int
+          {static} + POINT3 : int
+          + value : int
+          - random : Random
+          + Dice()
+          + compareTo()
+          + equals()
+          + hashCode()
+          + rollDie()
+          + toString()
+      }
+    }
+
+  
+
+    namespace Server {
+      class Server.DiceRollHandler {
+          + DiceRollHandler()
+          + checkDiceResults()
+          ~ checkClaw()
+          ~ checkEnergy()
+          ~ checkHeart()
+          ~ checkStars()
+      }
+    }
+
+  
+
+    namespace Server {
+      class Server.Game {
+          ~ response : int[]
+          - ALLDICE : int[]
+          - started : boolean
+          + Game()
+          - checkVictory()
+          - hasWon()
+          - monsterTurn()
+          - rollDice()
+          - startGame()
+      }
+    }
+
+  
+
+    namespace Server {
+      class Server.GameConfigurator {
+          + GameConfigurator()
+          + loadDeckConfiguration()
+      }
+    }
+
+  
+
+    namespace Server {
+      class Server.GameState {
+          + TOTALPLAYERSPOTS : int
+          # dice : List<Dice>
+          ~ availableMonsters : Stack<Monster>
+          ~ monsters : List<Monster>
+          + GameState()
+          + assignMonster()
+          + getAlive()
+          + getMonsters()
+          + rollDice()
+          + setMonsterInTokyo()
+      }
+    }
+
+  Server.CardShop o-- Server.GameState : gameState
+  Server.Dice .up.|> java.lang.Comparable
+  Server.DiceRollHandler o-- Server.Util.EffectCalculator : effectCalculator
+  Server.DiceRollHandler o-- Server.GameState : gameState
+  Server.Game o-- Server.CardShop : cardShop
+  Server.Game o-- Server.Util.ConnectionManager : connectionManager
+  Server.Game o-- Server.Deck : deck
+  Server.Game o-- Server.GameConfigurator : gameConfigurator
+  Server.Game o-- Server.GameState : gameState
+  Server.Game o-- Server.DiceRollHandler : rollHandler
+  Server.GameState o-- Server.Deck : cardDeck
+  Server.GameState o-- Server.Monster.Monster : monsterInTokyo
+
+
+right footer
+
+endfooter
+
+@enduml

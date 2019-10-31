@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="kingoftokyo.KingTokyo.Client.main" target="1.8" />
+      <module name="kingoftokyo.KingTokyo.Client.test" target="1.8" />
+      <module name="kingoftokyo.KingTokyo.Server.main" target="1.8" />
+      <module name="kingoftokyo.KingTokyo.Server.test" target="1.8" />
+      <module name="KingTokyo.Client.main" target="11" />
+      <module name="KingTokyo.Client.test" target="11" />
+      <module name="KingTokyo.Server.main" target="11" />
+      <module name="KingTokyo.Server.test" target="11" />
+      <module name="ServerModule.main" target="1.8" />
+      <module name="ServerModule.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

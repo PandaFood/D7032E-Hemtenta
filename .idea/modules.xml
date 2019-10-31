@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KingTokyo.iml" filepath="$PROJECT_DIR$/.idea/modules/KingTokyo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/KingTokyo.Client.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/KingTokyo.Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/KingTokyo.Client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/KingTokyo.Client.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/KingTokyo.Client.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/KingTokyo.Client.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/KingTokyo.Server.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/KingTokyo.Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/KingTokyo.Server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/KingTokyo.Server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/KingTokyo.Server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/KingTokyo.Server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/kingoftokyo.KingTokyo.Client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/kingoftokyo.KingTokyo.Client.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/kingoftokyo.KingTokyo.Client.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/kingoftokyo.KingTokyo.Client.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/kingoftokyo.KingTokyo.Server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/kingoftokyo.KingTokyo.Server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/kingoftokyo.KingTokyo.Server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/kingoftokyo.KingTokyo.Server.test.iml" />
+    </modules>
+  </component>
+</project>

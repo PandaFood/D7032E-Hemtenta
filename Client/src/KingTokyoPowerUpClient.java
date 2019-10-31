@@ -20,6 +20,8 @@ public class KingTokyoPowerUpClient {
             System.out.println(name);
 
             while(true) {
+
+
                 String[] message = inFromServer.readLine().split(":");
                 for(int i=0; i<message.length; i++) {System.out.println(message[i]);}
                 if(message[0].equalsIgnoreCase("VICTORY")) {
