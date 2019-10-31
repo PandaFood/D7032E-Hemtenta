@@ -2,13 +2,13 @@
   "deck": [
     {
       "id": 1,
-      "name": "Acid Attack",
-      "description": "Deal 1 extra damage each turn",
-      "cost": 6,
-      "discard": false,
-      "effects": [
-        "Store.MoreDamage1"
-      ]
+    "name": "Acid Attack",
+    "description": "Deal 1 extra damage each turn",
+    "cost": 6,
+    "discard": false,
+    "effects": [
+      "Store.MoreDamage1"
+    ]
     },
     {
       "id": 2,

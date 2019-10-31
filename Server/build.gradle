@@ -1,5 +1,10 @@
 jar {
-    baseName = 'TokyoServer'
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+    from { configurations.compile.collect { zipTree(it) } }
 }
 
 dependencies {
@@ -11,3 +16,4 @@ sourceSets {
     main.java.srcDir "src/main"
     test.java.srcDir "src/test"
 }
+

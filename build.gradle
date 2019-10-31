@@ -10,17 +10,6 @@ allprojects {
     group = 'kingoftokyo'
     version = '1.0'
 
-
-
-
-
-    /* Enable this for compiler warnings
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-        }
-    }
-    */
 }
 
 

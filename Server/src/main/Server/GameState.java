@@ -20,6 +20,10 @@ public class GameState {
 
     public final int TOTALPLAYERSPOTS = 2;
 
+
+    /**
+     * @param deck
+     */
     public GameState(Deck deck){
         availableMonsters.add(new Alienoid());
         availableMonsters.add(new Gigazaur());
